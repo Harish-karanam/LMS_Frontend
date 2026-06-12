@@ -80,6 +80,7 @@ const routes: Routes = [
 { path: 'manager-approvals', component: ManagerApprovals },
 { path: 'manager-team', component: ManagerTeam },
 { path: 'manager-projects', component: ManagerProjects },
+{ path: 'admin-new-user', component: Registeration },
 
 
 { path: 'admin-users', component: Users },

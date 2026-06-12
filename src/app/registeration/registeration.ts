@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Auth } from '../services/auth';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registeration',
@@ -9,38 +10,43 @@ import { Auth } from '../services/auth';
 })
 export class Registeration {
 
-  constructor(private auth: Auth) { }
+  registrationForm: FormGroup;
 
-  registrationData = {
-    employeeCode: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    roleId: null,
-    managerId: null,
-    departmentId: null,
-    projectId: null,
-    joiningDate: ''
-  };
+  constructor(
+    private auth: Auth,
+    private fb: FormBuilder
+  ) {
+    this.registrationForm = this.fb.group({
+      employeeCode: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      roleId: ['', Validators.required],
+      managerId: [''],
+      departmentId: ['', Validators.required],
+      projectId: ['', Validators.required],
+      joiningDate: ['', Validators.required]
+    });
+  }
 
   register() {
 
-    this.auth.register(this.registrationData)
-      .subscribe({
+    if (this.registrationForm.invalid) {
+      this.registrationForm.markAllAsTouched();
+      return;
+    }
 
-        next: (response) => {
-          console.log(response);
-          alert('Registration Successful');
-        },
-
-        error: (error) => {
-          console.error(error);
-          alert('Registration Failed');
-        }
-
-      });
-
+    this.auth.register(this.registrationForm.value).subscribe({
+      next: (response) => {
+        console.log(response);
+        alert('Registration Successful');
+        this.registrationForm.reset();
+      },
+      error: (error) => {
+        console.error(error);
+        alert(error.error?.message || 'Registration Failed');
+      }
+    });
   }
-
 }

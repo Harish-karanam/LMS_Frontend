@@ -18,7 +18,10 @@
         <mat-icon>dashboard</mat-icon>
         Dashboard
       </a>
-
+       <a routerLink="/admin-new-user">
+  <mat-icon>person_add</mat-icon>
+  New User
+</a>
       <a routerLink="/admin-users">
         <mat-icon>groups</mat-icon>
         Users
@@ -114,6 +117,19 @@
     </div>
 
     <!-- Dashboard Cards -->
+     <mat-card
+  routerLink="/admin-new-user"
+  class="dashboard-card">
+
+  <mat-icon>person_add</mat-icon>
+
+  <h3>New User</h3>
+
+  <p>
+    Register employee, manager, HR or admin
+  </p>
+
+</mat-card>
 
     <div class="dashboard-cards">
 

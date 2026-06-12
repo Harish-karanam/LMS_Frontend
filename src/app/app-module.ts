@@ -1,6 +1,6 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing-module';
@@ -93,6 +93,7 @@ import { NotificationBell } from './shared/notification-bell/notification-bell';
     MatSelectModule,
     MatTableModule,
   MatIconModule,
+  ReactiveFormsModule,
   ],
 
   providers: [
