@@ -3,7 +3,7 @@
   <mat-card>
 
     <mat-card-header>
-      <mat-card-title>User Registration</mat-card-title>
+      <mat-card-title>User Registration 👤</mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
@@ -57,28 +57,53 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Role Id</mat-label>
-          <input matInput type="number" formControlName="roleId">
-        </mat-form-field>
+  <mat-label>Role Id</mat-label>
+
+  <input
+    matInput
+    type="number"
+    formControlName="roleId">
+
+  <mat-error *ngIf="registrationForm.get('roleId')?.hasError('required')">
+    Role Id Required
+  </mat-error>
+
+</mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Manager Id</mat-label>
           <input matInput type="number" formControlName="managerId">
+
+          <mat-error *ngIf="registrationForm.get('managerId')?.hasError('required')">
+    Manager Id Required
+  </mat-error>
         </mat-form-field>
+
 
         <mat-form-field appearance="outline">
           <mat-label>Department Id</mat-label>
           <input matInput type="number" formControlName="departmentId">
+            <mat-error *ngIf="registrationForm.get('departmentId')?.hasError('required')">
+    Department Id Required
+  </mat-error>
+          
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Project Id</mat-label>
           <input matInput type="number" formControlName="projectId">
+           <mat-error *ngIf="registrationForm.get('projectId')?.hasError('required')">
+    Project Id Required
+  </mat-error>
+          
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Joining Date</mat-label>
           <input matInput type="date" formControlName="joiningDate">
+
+          <mat-error 
+          *ngIf="registrationForm.get('joiningDate')?.hasError('required')"> Joining Date Required </mat-error>
         </mat-form-field>
 
         <button
@@ -88,6 +113,8 @@
           [disabled]="registrationForm.invalid">
           Register
         </button>
+
+        
 
       </form>
 

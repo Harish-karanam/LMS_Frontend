@@ -23,7 +23,7 @@ export class Registeration {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       roleId: ['', Validators.required],
-      managerId: [''],
+      managerId: ['',Validators.required],
       departmentId: ['', Validators.required],
       projectId: ['', Validators.required],
       joiningDate: ['', Validators.required]
@@ -49,4 +49,5 @@ export class Registeration {
       }
     });
   }
+  
 }
