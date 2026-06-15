@@ -1,4 +1,4 @@
-<div class="projects-container">
+<!-- <div class="projects-container">
 
   <h2>Assigned Project</h2>
 
@@ -19,6 +19,45 @@
     class="empty-message"
     *ngIf="projects.length === 0">
     No project assigned
+  </p>
+
+</div> -->
+
+<div class="projects-container">
+
+  <h2>Assigned Projects</h2>
+
+  <table
+    class="projects-table"
+    *ngIf="projects.length > 0">
+
+    <thead>
+      <tr>
+        <th>Project Name</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let project of projects">
+
+        <td>{{ project.projectName }}</td>
+
+        <td>{{ project.departmentName }}</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <p
+    class="empty-message"
+    *ngIf="projects.length === 0">
+
+    No project assigned
+
   </p>
 
 </div>

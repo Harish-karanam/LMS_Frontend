@@ -1,4 +1,4 @@
-<div class="admin-page">
+<!-- <div class="admin-page">
 
   <h2>Audit Logs</h2>
 
@@ -15,5 +15,60 @@
     <p><b>Created At:</b> {{ log.createdAt }}</p>
 
   </div>
+
+</div> -->
+
+<div class="admin-page">
+
+  <h2>Audit Logs</h2>
+
+  <table
+    class="audit-table"
+    *ngIf="auditLogs.length > 0">
+
+    <thead>
+      <tr>
+        <th>Log ID</th>
+        <th>Action</th>
+        <th>Entity Name</th>
+        <th>Entity ID</th>
+        <th>Performed By</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let log of auditLogs">
+
+        <td>{{ log.id }}</td>
+
+        <td>
+          <span class="action-badge">
+            {{ log.action }}
+          </span>
+        </td>
+
+        <td>{{ log.entityName }}</td>
+
+        <td>{{ log.entityId }}</td>
+
+        <td>{{ log.performedBy }}</td>
+
+        <td>{{ log.createdAt }}</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <p
+    class="empty-message"
+    *ngIf="auditLogs.length === 0">
+
+    No audit logs found.
+
+  </p>
 
 </div>

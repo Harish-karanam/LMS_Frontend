@@ -1,4 +1,4 @@
-<div class="admin-page">
+<!-- <div class="admin-page">
 
   <h2>All Projects</h2>
 
@@ -24,5 +24,50 @@
     </p>
 
   </div>
+
+</div> -->
+
+<div class="admin-page">
+
+  <h2>All Projects</h2>
+
+  <table
+    class="projects-table"
+    *ngIf="projects.length > 0">
+
+    <thead>
+      <tr>
+        <th>Project ID</th>
+        <th>Project Name</th>
+        <th>Country</th>
+        <th>Weekend Days</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let project of projects">
+
+        <td>{{ project.id }}</td>
+
+        <td>{{ project.projectName }}</td>
+
+        <td>{{ project.calendarType }}</td>
+
+        <td>{{ project.weekendConfig }}</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <p
+    class="empty-message"
+    *ngIf="projects.length === 0">
+
+    No projects found.
+
+  </p>
 
 </div>

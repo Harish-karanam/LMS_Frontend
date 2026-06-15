@@ -10,13 +10,13 @@
 
       <form [formGroup]="registrationForm" (ngSubmit)="register()">
 
-        <mat-form-field appearance="outline">
+        <!-- <mat-form-field appearance="outline">
           <mat-label>Employee Code</mat-label>
           <input matInput formControlName="employeeCode">
           <mat-error *ngIf="registrationForm.get('employeeCode')?.hasError('required')">
             Employee code is required
           </mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
 
         <mat-form-field appearance="outline">
           <mat-label>First Name</mat-label>

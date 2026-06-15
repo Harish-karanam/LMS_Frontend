@@ -1,4 +1,4 @@
-<div class="approval-container">
+<!-- <div class="approval-container">
 
   <h2>Manager Leave Approvals</h2>
 
@@ -56,6 +56,80 @@
     </div>
 
   </div>
+
+  <p
+    class="empty-message"
+    *ngIf="leaveRequests.length === 0">
+
+    No leave requests found
+
+  </p>
+
+</div> -->
+
+
+<div class="approval-container">
+
+  <h2>Manager Leave Approvals</h2>
+
+  <table
+    class="approval-table"
+    *ngIf="leaveRequests.length > 0">
+
+    <thead>
+      <tr>
+        <th>Employee</th>
+        <th>Leave Type</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let leave of leaveRequests">
+
+        <td>{{ leave.employeeName }}</td>
+        <td>{{ leave.leaveType }}</td>
+        <td>{{ leave.startDate }}</td>
+        <td>{{ leave.endDate }}</td>
+        <td>
+          <span class="status">
+            {{ leave.status }}
+          </span>
+        </td>
+
+        <td>
+
+          <button
+            mat-raised-button
+            color="primary"
+            *ngIf="leave.status === 'PENDING'"
+            (click)="approveLeave(leave.id)">
+
+            Approve
+
+          </button>
+
+          <button
+            mat-raised-button
+            color="warn"
+            *ngIf="leave.status === 'PENDING'"
+            (click)="rejectLeave(leave.id)">
+
+            Reject
+
+          </button>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
 
   <p
     class="empty-message"

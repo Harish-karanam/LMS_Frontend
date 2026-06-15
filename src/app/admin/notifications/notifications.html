@@ -1,4 +1,4 @@
-<div class="admin-page">
+<!-- <div class="admin-page">
 
   <h2>All Notifications</h2>
 
@@ -40,5 +40,68 @@
     </p>
 
   </div>
+
+</div> -->
+
+
+<div class="admin-page">
+
+  <h2>All Notifications</h2>
+
+  <table
+    class="notifications-table"
+    *ngIf="notifications.length > 0">
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Message</th>
+        <th>User ID</th>
+        <th>Status</th>
+        <th>Type</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let notification of notifications">
+
+        <td>{{ notification.id }}</td>
+
+        <td>{{ notification.message }}</td>
+
+        <td>{{ notification.userId }}</td>
+
+        <td>
+          <span
+            class="status-badge"
+            [ngClass]="{
+              'read': notification.status === 'READ',
+              'unread': notification.status === 'UNREAD'
+            }">
+
+            {{ notification.status }}
+
+          </span>
+        </td>
+
+        <td>{{ notification.type }}</td>
+
+        <td>{{ notification.createdAt }}</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <p
+    class="empty-message"
+    *ngIf="notifications.length === 0">
+
+    No notifications found.
+
+  </p>
 
 </div>

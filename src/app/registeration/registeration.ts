@@ -17,7 +17,7 @@ export class Registeration {
     private fb: FormBuilder
   ) {
     this.registrationForm = this.fb.group({
-      employeeCode: ['', Validators.required],
+      // employeeCode: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],

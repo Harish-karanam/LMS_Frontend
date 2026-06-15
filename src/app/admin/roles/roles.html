@@ -1,4 +1,4 @@
-<div class="admin-page">
+<!-- <div class="admin-page">
 
   <h2>All Roles</h2>
 
@@ -14,5 +14,45 @@
     </p>
 
   </div>
+
+</div> -->
+
+
+<div class="admin-page">
+
+  <h2>All Roles</h2>
+
+  <table
+    class="roles-table"
+    *ngIf="roles.length > 0">
+
+    <thead>
+      <tr>
+        <th>Role ID</th>
+        <th>Role Name</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let role of roles">
+
+        <td>{{ role.id }}</td>
+
+        <td>{{ role.roleName }}</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <p
+    class="empty-message"
+    *ngIf="roles.length === 0">
+
+    No roles found.
+
+  </p>
 
 </div>

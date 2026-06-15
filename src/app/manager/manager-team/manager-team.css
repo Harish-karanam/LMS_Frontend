@@ -1,4 +1,4 @@
-.team-container {
+/* .team-container {
   padding: 30px;
   background: #f4f7fb;
   min-height: 100vh;
@@ -30,6 +30,62 @@
 }
 
 .empty-message {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  color: #64748b;
+} */
+
+.team-container {
+  padding: 30px;
+  background: #f4f7fb;
+  min-height: 100vh;
+}
+
+.team-container h2 {
+  font-size: 28px;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.team-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.team-table th {
+  background: #0284c7;
+  color: white;
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.team-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.team-table tr:hover {
+  background: #f8fafc;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.empty-message {
+  margin-top: 20px;
   background: white;
   padding: 20px;
   border-radius: 12px;
