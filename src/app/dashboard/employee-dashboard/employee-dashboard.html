@@ -50,15 +50,29 @@ Logout
 
 </div> -->
 
+
 <div class="dashboard-header">
-  <h2>Welcome, {{employeeName}}</h2>
-   <app-notification-bell></app-notification-bell>
-  <button
-    mat-raised-button
-    color="warn"
-    (click)="logout()">
-    Logout
-  </button>
+  <h1>Invenio Business solutions</h1>
+    
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <div class="employee-profile">
+        <mat-icon> account_circle</mat-icon>
+        <span>
+            Welcome {{employeeName}}
+        </span>
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="logout()">
+          <mat-icon>logout</mat-icon>
+            Logout
+          </button>
+           <app-notification-bell></app-notification-bell>
+
+     </div>
+  <h2></h2>
+
+  
 </div>
 
 <div class="dashboard-grid">

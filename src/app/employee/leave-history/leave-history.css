@@ -43,3 +43,8 @@ td {
   background: #dcfce7;
   color: #166534;
 }
+
+.status.rejected{
+  background-color: #dcfce7;
+  color: red;
+}

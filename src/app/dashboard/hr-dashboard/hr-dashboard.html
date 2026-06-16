@@ -24,23 +24,36 @@
     </nav>
 
   </aside>
-
+ 
   <main class="main-content">
 
     <div class="top-bar">
-      <h1>HR Dashboard</h1>
-      <app-notification-bell></app-notification-bell>
-      Welcome Back, {{ hrName }}
-      <button
-  mat-raised-button
-  color="warn"
-  (click)="logout()">
+      <h2>HR Dashboard</h2>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-  <mat-icon>logout</mat-icon>
+      <div class="hr-profile">
+        <mat-icon>account_circle</mat-icon>
 
-  Logout
+        <span>
+          Welcome {{hrName}}
+        </span>
 
-</button>
+          <button
+             mat-raised-button
+            color="warn"
+            (click)="logout()">
+
+          <mat-icon>logout</mat-icon>
+
+            Logout
+
+            </button>
+
+            <app-notification-bell></app-notification-bell>
+      </div>
+      
+     
+    
     </div>
 
     <div class="dashboard-cards">

@@ -25,7 +25,7 @@ export class RoleGuard implements CanActivate {
     alert('Access Denied');
 
     this.router.navigate(['/login']);
-
+          
     return false;
   }
 }

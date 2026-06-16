@@ -80,6 +80,7 @@
       <tr>
         <th>Employee</th>
         <th>Leave Type</th>
+        <th>Reason</th>
         <th>From</th>
         <th>To</th>
         <th>Status</th>
@@ -93,6 +94,7 @@
 
         <td>{{ leave.employeeName }}</td>
         <td>{{ leave.leaveType }}</td>
+        <td>{{ leave.reason }}</td>
         <td>{{ leave.startDate }}</td>
         <td>{{ leave.endDate }}</td>
         <td>
@@ -101,7 +103,7 @@
           </span>
         </td>
 
-        <td>
+        <!-- <td>
 
           <button
             mat-raised-button
@@ -123,7 +125,53 @@
 
           </button>
 
-        </td>
+            <span *ngIf="leave.status === 'MANAGER_APPROVED' && 'HR_APPROVED'">
+                Approved
+            </span>
+
+              <span *ngIf="leave.status === 'MANAGER_REJECTED'">
+                  Rejected
+              </span>
+
+        </td> -->
+
+        <td [ngSwitch]="leave.status">
+
+  <ng-container *ngSwitchCase="'PENDING'">
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="approveLeave(leave.id)">
+      Approve
+    </button>
+
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="rejectLeave(leave.id)">
+      Reject
+    </button>
+
+  </ng-container>
+
+  <span *ngSwitchCase="'MANAGER_APPROVED'">
+    Sent to HR
+  </span>
+
+  <span *ngSwitchCase="'MANAGER_REJECTED'">
+    Rejected by Manager
+  </span>
+
+  <span *ngSwitchCase="'HR_APPROVED'">
+    Approved by Manager & HR
+  </span>
+
+  <span *ngSwitchCase="'HR_REJECTED'">
+    Rejected by HR
+  </span>
+
+</td>
 
       </tr>
 

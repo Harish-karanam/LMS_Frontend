@@ -84,7 +84,7 @@ nav a:hover {
 .admin-profile {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 18px;
 
   background: white;
   padding: 12px 18px;
