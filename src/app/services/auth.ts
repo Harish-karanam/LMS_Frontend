@@ -36,5 +36,10 @@ export class Auth {
 getAllProjects(): Observable<any[]> {
   return this.http.get<any[]>(`${this.baseUrl}/projects`);
 }
+getAllEmployeeLeaveBalances() {
+  return this.http.get<any[]>(
+    `${this.baseUrl}/leave-balances/hr-view`
+  );
+}
 
 }
